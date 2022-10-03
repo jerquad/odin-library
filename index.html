@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="./script.js"></script>
+    <link rel="stylesheet" href="./style.css">
+    <title>Library</title>
+</head>
+<body>
+    <div id="header">myLibrary</div>
+    <div id="form">
+        <form action="./index.html" id="booker">
+            <div>
+                <label for="title">title</label>
+                <input type="text" id="title" name="title" required>
+            </div>
+            <div>
+                <label for="author">author</label>
+                <input type="text" id="author" name="author" required>
+            </div>
+            <div>
+                <label for="published">published</label>
+                <input type="number" id="published" name="published">
+            </div>
+            <div>
+                <label for="pages">pages</label>
+                <input type="number" id="pages" name="pages">
+            </div>
+            <div>
+                <label for="read">finished</label>
+                <input type="checkbox" id="read" name="read">
+            </div>
+            <button type="submit" id="submit"><h4>ADD BOOK</h4></button>
+        </form>
+
+    </div>
+    <div id="shelf-container">
+        <div id="shelf"></div>
+    </div>
+</body>
+</html>

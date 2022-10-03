@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Roboto:ital,wght@0,300;0,400;1,300&display=swap');
+
+body {
+    font-family: "roboto", sans-serif;
+    background-color: var(--head);
+
+    margin: 0;
+    padding: 1rem;
+}
+
+:root {
+    --hue: 185;
+    --sat: 100%;
+    --light: 70%;
+    --head: hsl(var(--hue), 0%, 60%);
+    --stripe-1: hsl(var(--hue), 0%, 90%);
+    --stripe-2: hsl(var(--hue), var(--sat), 90%);
+    --invert: hsl(calc(var(--hue) - 150), var(--sat), 60%);
+    --form: hsl(var(--hue), var(--sat), var(--light));
+    --form-input: hsl(var(--hue), var(--sat), calc(var(--light) + 20%));
+    --form-input-border: hsl(var(--hue), var(--sat), calc(var(--light) - 30%));
+    --form-check: hsl(calc(var(--hue) - 180), var(--sat), var(--light));
+    --button-color: hsl(calc(var(--hue) + 20), var(--sat), var(--light));
+    --button-dark: hsl(calc(var(--hue) + 20), var(--sat), calc(var(--light) - 20%));
+}
+
+p, h4 {
+    margin: 0;
+}
+
+input {
+    background-color: var(--form-input);
+    border: 1px solid var(--form-input-border);
+    border-radius: .25rem;
+    padding: .25rem;
+}
+
+input[type="checkbox"] {
+    appearance: none;
+    position: relative;
+    width: 1rem;
+    height: 1rem;
+    border: 1px solid var(--form-input-border);
+    border-radius: .25rem;
+    vertical-align: -2px;
+    color: var(--form-check);
+}
+
+input[type="checkbox"]::before {
+    content: "✔";
+    position: absolute;
+    font-size: 1.2rem;
+    right: -1px;
+    top: -0.25rem;
+    visibility: hidden;
+}
+
+input[type="checkbox"]:checked::before {
+    visibility: visible;
+}
+
+label {
+    display: block;
+}
+
+label[for="read"] {
+    display: inline;
+}
+
+form :nth-child(5) {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+form button {
+    background-color: var(--button-color);
+    border: 2px solid var(--button-dark);
+    border-radius: 10px;
+    width: 8rem;
+    padding: .5rem;
+    justify-self: end;
+}
+
+button:active {
+    background-color: var(--button-dark);
+}
+
+#form, #shelf-container {
+    margin: 0 2rem;
+}
+
+#form {
+    background-color: var(--form);
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    border-radius: 10px 10px 0 0;
+}
+
+form {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: .5rem;
+}
+
+@media (min-width: 851px) {
+    form button{
+        grid-area: 2 / 4 / 3 / 5;
+    }
+    form :nth-child(5) {
+        grid-area: 2 / 3 / 3/ 4;
+    }
+}
+
+@media (max-width: 850px) {
+    form {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+#header {
+    background-color: var(--head);
+    color: var(--invert);
+    font-family: 'Alfa Slab One', cursive;
+    font-size: 4rem;
+}
+
+#shelf-container {
+
+    justify-content: center;
+    background-color: white;
+    margin-bottom: 1rem;
+    border-radius: 0 0 10px 10px;
+}
+
+#shelf {
+    
+    
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 20%));
+    gap: 20px;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    padding-top: 1rem;
+    background-color: var(--invert);
+    aspect-ratio: 4 / 3;
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px black;
+}
+
+.card h3 {
+    margin: 0 1rem;
+}
+
+.card h4,
+.card p {
+    margin: 0 1.5rem;
+}
+
+.card p {
+    font-style: italic;
+    font-size: .95rem;;
+}
+
+.card div {
+    padding: .35rem;
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 0 0 10px 10px;
+}
+
+.card div p {
+    font-style: normal;
+    font-family: 'Alfa Slab One', cursive;
+    margin: 0;
+}
+
+.unread {
+    background-color: var(--head);
+}
+
+.read {
+    content: "hello";
+    background-color: var(--form);
+}
+
+.card div img {
+    width: 24px;
+    height: 24px;
+}
+
+.hide {
+    visibility: hidden;
+}
